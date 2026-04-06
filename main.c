@@ -28,7 +28,7 @@ void limpiarPantalla() {
 
 // ===== MENU =====
 void verMenu() {
-    printf("\n🍔 ===== MENU ===== 🍔\n");
+    printf("\n ===== MENU ===== \n");
     for (int i = 0; i < MAX_PRODUCTOS; i++) {
         printf("%d. %-15s $%.0f\n", catalogo[i].id, catalogo[i].nombre, catalogo[i].precio);
     }
@@ -43,7 +43,7 @@ void agregarProducto() {
     scanf("%d", &id);
 
     if (id < 1 || id > MAX_PRODUCTOS) {
-        printf("❌ Producto no existe\n");
+        printf(" Producto no existe\n");
         return;
     }
 
@@ -51,12 +51,12 @@ void agregarProducto() {
     scanf("%d", &cantidad);
 
     if (cantidad <= 0) {
-        printf("❌ Cantidad invalida\n");
+        printf(" Cantidad invalida\n");
         return;
     }
 
     carrito[id - 1] += cantidad;
-    printf("✅ Agregado correctamente\n");
+    printf(" Agregado correctamente\n");
 }
 
 // ===== ELIMINAR =====
@@ -67,12 +67,12 @@ void eliminarProducto() {
     scanf("%d", &id);
 
     if (id < 1 || id > MAX_PRODUCTOS) {
-        printf("❌ Producto invalido\n");
+        printf("Producto invalido\n");
         return;
     }
 
     if (carrito[id - 1] == 0) {
-        printf("⚠️ Ese producto no esta en el carrito\n");
+        printf(" Ese producto no esta en el carrito\n");
     } else {
         carrito[id - 1] = 0;
         printf("🗑️ Producto eliminado\n");
@@ -116,7 +116,7 @@ void confirmarPedido() {
     }
 
     if (subtotal == 0) {
-        printf("❌ No hay productos\n");
+        printf(" No hay productos\n");
         return;
     }
 
@@ -136,7 +136,7 @@ void confirmarPedido() {
     printf("\nDomicilio: $%d", DOMICILIO);
     printf("\nTOTAL PAGADO: $%.0f\n", total);
 
-    printf("\n🎉 Pedido confirmado!\n");
+    printf("\n Pedido confirmado!\n");
 
     // Vaciar carrito
     for (int i = 0; i < MAX_PRODUCTOS; i++) {
@@ -176,8 +176,8 @@ int main() {
             case 4: eliminarProducto(); break;
             case 5: confirmarPedido(); break;
             case 6: vaciarCarrito(); break;
-            case 7: printf("👋 Hasta luego\n"); break;
-            default: printf("❌ Opcion invalida\n");
+            case 7: printf(" Hasta luego\n"); break;
+            default: printf(" Opcion invalida\n");
         }
 
     } while (opcion != 7);
