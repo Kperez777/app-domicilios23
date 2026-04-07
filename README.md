@@ -30,4 +30,4 @@ Lenguaje C
 Consola (CLI)
 Autor
 
-Proyecto académico de programación en C
+kumar perez
